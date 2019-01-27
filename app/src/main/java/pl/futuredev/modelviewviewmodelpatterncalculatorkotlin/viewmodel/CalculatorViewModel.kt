@@ -1,5 +1,8 @@
 package pl.futuredev.modelviewviewmodelpatterncalculatorkotlin.viewmodel
 
+import android.content.ContentValues.TAG
+import android.nfc.Tag
+import android.util.Log
 import pl.futuredev.modelviewviewmodelpatterncalculatorkotlin.model.Calculator
 import pl.futuredev.modelviewviewmodelpatterncalculatorkotlin.model.TipCalculation
 
@@ -10,6 +13,8 @@ class CalculatorViewModel(val calculator: Calculator = Calculator()) {
     var tipCalculation = TipCalculation()
 
     fun calculateTip(){
+
+        Log.d(TAG, "calculateTipInvoked")
         val checkAmount = inputCheckAmount.toDoubleOrNull()
         val tipPct = inputTipPercentage.toIntOrNull()
 
