@@ -11,7 +11,7 @@ import pl.futuredev.modelviewviewmodelpatterncalculatorkotlin.R
 import pl.futuredev.modelviewviewmodelpatterncalculatorkotlin.model.Calculator
 import pl.futuredev.modelviewviewmodelpatterncalculatorkotlin.model.TipCalculation
 
-class CalculatorViewModel(val app: Application, val calculator: Calculator = Calculator()) : BaseObservable() {
+class CalculatorViewModel @JvmOverloads constructor(app: Application, val calculator: Calculator = Calculator()) : ObservableViewModel(app) {
 
     var inputCheckAmount = ""
     var inputTipPercentage = ""
@@ -26,9 +26,9 @@ class CalculatorViewModel(val app: Application, val calculator: Calculator = Cal
     }
 
     private fun updateOutputs(tipCalculation: TipCalculation) {
-        outputCheckAmount = app.getString(R.string.dollar_amount, tipCalculation.checkAmount)
-        outputTipAmount = app.getString(R.string.dollar_amount, tipCalculation.tipAmount)
-        outputTotalDollarAmount = app.getString(R.string.dollar_amount, tipCalculation.grandTotal)
+        outputCheckAmount = getApplication<Application>().getString(R.string.dollar_amount, tipCalculation.checkAmount)
+        outputTipAmount = getApplication<Application>().getString(R.string.dollar_amount, tipCalculation.tipAmount)
+        outputTotalDollarAmount = getApplication<Application>().getString(R.string.dollar_amount, tipCalculation.grandTotal)
     }
 
     fun calculateTip() {
