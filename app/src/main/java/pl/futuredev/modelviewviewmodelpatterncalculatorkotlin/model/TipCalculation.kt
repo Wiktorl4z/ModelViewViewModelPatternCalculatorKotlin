@@ -1,6 +1,6 @@
 package pl.futuredev.modelviewviewmodelpatterncalculatorkotlin.model
 
-class TipCalculation (
+data class TipCalculation (
 
     val checkAmount: Double = 0.0,
     val tipPct: Int = 0,
