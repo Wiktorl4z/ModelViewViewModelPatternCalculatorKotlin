@@ -2,7 +2,7 @@ package pl.futuredev.modelviewviewmodelpatterncalculatorkotlin.model
 
 import java.math.RoundingMode
 
-class RestaurantCalculator {
+class Calculator {
 
     fun calculatorTip(checkAmount: Double, tipPct: Int): TipCalculation {
 

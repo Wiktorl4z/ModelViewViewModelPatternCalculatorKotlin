@@ -3,14 +3,16 @@ package pl.futuredev.modelviewviewmodelpatterncalculatorkotlin.model
 import junit.framework.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
+import org.mockito.Mock
+import org.mockito.MockitoAnnotations
 
-class RestaurantCalculatorTest {
+class CalculatorTest {
 
-    lateinit var calculator: RestaurantCalculator
+    lateinit var calculator: Calculator
 
     @Before
     fun setup() {
-        calculator = RestaurantCalculator()
+        calculator = Calculator()
     }
 
     @Test
